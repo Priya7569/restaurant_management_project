@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>404 Error - Page Not Found</title>
-        <style>
-                body {
-                            font-family: Arial, sans-serif;
-                                        background-color: #f2f2f2;
-                                                }
-                                                        .error-container {
-                                                                    width: 80%;
-                                                                                margin: auto;
-                                                                                            padding: 20px;
-                                                                                                        text-align: center;
-                                                                                                                }
-                                                                                                                        .error-container h1 {
-                                                                                                                                    font-size: 48px;
-                                                                                                                                                color: #333;
-                                                                                                                                                        }
-                                                                                                                                                                .error-container p {
-                                                                                                                                                                            font-size: 18px;
-                                                                                                                                                                                        color: #666;
-                                                                                                                                                                                                }
-                                                                                                                                                                                                    </style>
-                                                                                                                                                                                                    </head>
-                                                                                                                                                                                                    <body>
-                                                                                                                                                                                                        <div class="error-container">
-                                                                                                                                                                                                                <h1>404 Error</h1>
-                                                                                                                                                                                                                        <p>Sorry, the page you are looking for does not exist.</p>
-                                                                                                                                                                                                                                <p><a href="/">Back to Homepage</a></p>
-                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                    </html>
-                                                                                                                                                                                                                                    
+                                                                                                                                     # views.py
+                                                                                                                                     from django.shortcuts import render
+
+                                                                                                                                     def menu(request):
+                                                                                                                                         menu_items = [
+                                                                                                                                                 {"name": "Burger", "price": 10.99, "description": "A juicy beef burger"},
+                                                                                                                                                         {"name": "Pizza", "price": 14.99, "description": "A delicious margherita pizza"},
+                                                                                                                                                                 {"name": "Salad", "price": 8.99, "description": "A fresh mix of greens and veggies"},
+                                                                                                                                                                         {"name": "Sandwich", "price": 9.99, "description": "A tasty sandwich with your choice of filling"},
+                                                                                                                                                                             ]
+                                                                                                                                                                                 return render(request, 'menu.html', {'menu_items': menu_items})
