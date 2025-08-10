@@ -1,43 +1,59 @@
- <!DOCTYPE html>
- <html>
- <head>
-     <title>Contact Us</title>
-         <style>
-                 body {
-                             font-family: Arial, sans-serif;
-                                     }
-                                             .contact-container {
-                                                         width: 80%;
-                                                                     margin: auto;
-                                                                                 padding: 20px;
-                                                                                         }
-                                                                                                 .contact-info {
-                                                                                                             margin-bottom: 20px;
-                                                                                                                     }
-                                                                                                                         </style>
-                                                                                                                         </head>
-                                                                                                                         <body>
-                                                                                                                             <div class="contact-container">
-                                                                                                                                     <h1>Contact Us</h1>
-                                                                                                                                             <div class="contact-info">
-                                                                                                                                                         <h2>Get in Touch</h2>
-                                                                                                                                                                     <p>Phone: 123-456-7890</p>
-                                                                                                                                                                                 <p>Email: [info@example.com](mailto:info@example.com)</p>
-                                                                                                                                                                                             <p>Address: 123 Main St, Anytown, USA 12345</p>
-                                                                                                                                                                                                     </div>
-                                                                                                                                                                                                             <div class="contact-form">
-                                                                                                                                                                                                                         <h2>Send Us a Message</h2>
-                                                                                                                                                                                                                                     <form>
-                                                                                                                                                                                                                                                     <label for="name">Name:</label>
-                                                                                                                                                                                                                                                                     <input type="text" id="name" name="name"><br><br>
-                                                                                                                                                                                                                                                                                     <label for="email">Email:</label>
-                                                                                                                                                                                                                                                                                                     <input type="email" id="email" name="email"><br><br>
-                                                                                                                                                                                                                                                                                                                     <label for="message">Message:</label>
-                                                                                                                                                                                                                                                                                                                                     <textarea id="message" name="message"></textarea><br><br>
-                                                                                                                                                                                                                                                                                                                                                     <input type="submit" value="Send">
-                                                                                                                                                                                                                                                                                                                                                                 </form>
-                                                                                                                                                                                                                                                                                                                                                                         </div>
-                                                                                                                                                                                                                                                                                                                                                                             </div>
-                                                                                                                                                                                                                                                                                                                                                                             </body>
-                                                                                                                                                                                                                                                                                                                                                                             </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              return render(request, 'menu.html', {'menu_items': menu_items})
+/* Global Styles */
+* {
+  box-sizing: border-box;
+    margin: 0;
+      padding: 0;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+          line-height: 1.6;
+            color: #333;
+              background-color: #f4f4f4;
+              }
+              
+              /* Header Styles */
+              header {
+                background-color: #333;
+                  color: #fff;
+                    padding: 20px;
+                      text-align: center;
+                      }
+                      
+                      header h1 {
+                        margin: 0;
+                        }
+                        
+                        /* Main Content Styles */
+                        main {
+                          display: flex;
+                            flex-direction: column;
+                              align-items: center;
+                                padding: 20px;
+                                }
+                                
+                                main h2 {
+                                  margin-bottom: 10px;
+                                  }
+                                  
+                                  /* Footer Styles */
+                                  footer {
+                                    background-color: #333;
+                                      color: #fff;
+                                        text-align: center;
+                                          padding: 10px;
+                                            position: fixed;
+                                              bottom: 0;
+                                                width: 100%;
+                                                }
+                                                
+                                                /* Link Styles */
+                                                a {
+                                                  color: #337ab7;
+                                                    text-decoration: none;
+                                                    }
+                                                    
+                                                    a:hover {
+                                                      color: #23527c;
+                                                      }
+                                                                                                                                                                                                                                                                                                                                                                                                       <label for=                                                                                                                                return render(request, 'menu.html', {'menu_items': menu_items})
