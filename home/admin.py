@@ -1,38 +1,44 @@
-<!-- homepage.html -->
+<!-- feedback.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Restaurant Homepage</title>
+    <title>Leave Feedback</title>
         <style>
-                .search-container {
+                .feedback-container {
                             width: 80%;
                                         margin: auto;
                                                     padding: 20px;
-                                                                text-align: center;
-                                                                        }
-                                                                                .search-bar {
-                                                                                            width: 50%;
-                                                                                                        padding: 10px;
-                                                                                                                    font-size: 16px;
-                                                                                                                                border: 1px solid #ccc;
-                                                                                                                                        }
-                                                                                                                                                .search-button {
-                                                                                                                                                            padding: 10px 20px;
+                                                            }
+                                                                    .feedback-form {
+                                                                                padding: 20px;
+                                                                                            border: 1px solid #ccc;
+                                                                                                        border-radius: 10px;
+                                                                                                                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                                                                                            }
+                                                                                                                                    .feedback-textarea {
+                                                                                                                                                width: 100%;
+                                                                                                                                                            padding: 10px;
                                                                                                                                                                         font-size: 16px;
-                                                                                                                                                                                    background-color: #333;
-                                                                                                                                                                                                color: #fff;
-                                                                                                                                                                                                            border: none;
-                                                                                                                                                                                                                        cursor: pointer;
-                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                    </style>
-                                                                                                                                                                                                                                    </head>
-                                                                                                                                                                                                                                    <body>
-                                                                                                                                                                                                                                        <div class="search-container">
-                                                                                                                                                                                                                                                <form>
-                                                                                                                                                                                                                                                            <input type="text" class="search-bar" placeholder="Search for menu items...">
-                                                                                                                                                                                                                                                                        <button type="submit" class="search-button">Search</button>
-                                                                                                                                                                                                                                                                                </form>
-                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                    </body>
-                                                                                                                                                                                                                                                                                    </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                          <label for=                                                                                                                                return render(request, 'menu.html', {'menu_items': menu_items})
+                                                                                                                                                                                }
+                                                                                                                                                                                        .feedback-button {
+                                                                                                                                                                                                    padding: 10px 20px;
+                                                                                                                                                                                                                font-size: 16px;
+                                                                                                                                                                                                                            background-color: #333;
+                                                                                                                                                                                                                                        color: #fff;
+                                                                                                                                                                                                                                                    border: none;
+                                                                                                                                                                                                                                                                cursor: pointer;
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                            </style>
+                                                                                                                                                                                                                                                                            </head>
+                                                                                                                                                                                                                                                                            <body>
+                                                                                                                                                                                                                                                                                <div class="feedback-container">
+                                                                                                                                                                                                                                                                                        <h1>Leave Feedback</h1>
+                                                                                                                                                                                                                                                                                                <form method="post">
+                                                                                                                                                                                                                                                                                                            {% csrf_token %}
+                                                                                                                                                                                                                                                                                                                        <textarea class="feedback-textarea" name="feedback" placeholder="Enter your feedback..."></textarea>
+                                                                                                                                                                                                                                                                                                                                    <button type="submit" class="feedback-button">Submit</button>
+                                                                                                                                                                                                                                                                                                                                            </form>
+                                                                                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                                                                                </body>
+                                                                                                                                                                                                                                                                                                                                                </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <label for=                                                                                                                                return render(request, 'menu.html', {'menu_items': menu_items})
