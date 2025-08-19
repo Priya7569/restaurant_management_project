@@ -1,12 +1,25 @@
-                            # models.py
-                            from django.db import models
-                            from django.contrib.auth.models import User
-                            
-                            class UserProfile(models.Model):
-                                user = models.OneToOneField(User, on_delete=models.CASCADE)
-                                    name = models.CharField(max_length=255)
-                                        email = models.EmailField(unique=True)
-                                            phone_number = models.CharField(max_length=20)
-                                            
-                                                def __str__(self):
-                                                        return self.user.username                                                                                                   return render(request, 'menu.html', {'menu_items': menu_items})
+<!-- templates/menu.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu</title>
+    </head>
+    <body>
+        <h1>Restaurant Menu</h1>
+            <ul>
+                {% for item in menu_items %}
+                        <li>
+                                    <h2>{{ item.name }}</h2>
+                                                <p>{{ item.description }}</p>
+                                                            <p>Price: {{ item.price }}</p>
+                                                                        {% if item.is_available %}
+                                                                                        <p>Available</p>
+                                                                                                    {% else %}
+                                                                                                                    <p>Not Available</p>
+                                                                                                                                {% endif %}
+                                                                                                                                        </li>
+                                                                                                                                            {% endfor %}
+                                                                                                                                                </ul>
+                                                                                                                                                </body>
+                                                                                                                                                </html>
+                                                                                                                                                                                                                              return render(request, 'menu.html', {'menu_items': menu_items})
