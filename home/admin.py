@@ -1,6 +1,6 @@
+from django.conf import settings
 from django.shortcuts import render
-from .models import MenuItem
 
-def menu(request):
-    menu_items = MenuItem.objects.all()
-        return render(request, 'menu.html', {'menu_items': menu_items})
+def home(request):
+    restaurant_name = settings.RESTAURANT_NAME
+        return render(request, 'home.html', {'restaurant_name': restaurant_name})
