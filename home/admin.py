@@ -1,11 +1,6 @@
-from django.db import models
+from django.shortcuts import render
+from .models import MenuItem
 
-class MenuItem(models.Model):
-    name = models.CharField(max_length=255)
-        description = models.TextField()
-            price = models.DecimalField(max_digits=5, decimal_places=2)
-                created_at = models.DateTimeField(auto_now_add=True)
-                    updated_at = models.DateTimeField(auto_now=True)
-
-                        def __str__(self):
-                                return f"{self.name} - {self.price}"
+def menu(request):
+    menu_items = MenuItem.objects.all()
+        return render(request, 'menu.html', {'menu_items': menu_items})
