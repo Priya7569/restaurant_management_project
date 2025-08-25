@@ -1,7 +1,9 @@
-# admin.py
-from django.contrib import admin
-from .models import MenuItem, Order, OrderItem
+from django.db import models
 
-admin.site.register(MenuItem)
-admin.site.register(Order)
-admin.site.register(OrderItem)                                                    r
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+        email = models.EmailField()
+            created_at = models.DateTimeField(auto_now_add=True)
+
+                def __str__(self):
+                        return f"{self.name} - {self.email}"
