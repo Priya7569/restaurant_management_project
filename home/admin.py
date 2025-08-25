@@ -1,9 +1,17 @@
-from django.db import models
+.map-container {
+        position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                    overflow: hidden;
+                        max-width: 100%;
+                        }
 
-class Contact(models.Model):
-    name = models.CharField(max_length=255)
-        email = models.EmailField()
-            created_at = models.DateTimeField(auto_now_add=True)
-
-                def __str__(self):
-                        return f"{self.name} - {self.email}"
+                        .map-container iframe {
+                            position: absolute;
+                                top: 0;
+                                    left: 0;
+                                        width: 100%;
+                                            height: 100%;
+                                            }
+                                            
+}
