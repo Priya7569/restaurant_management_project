@@ -1,17 +1,11 @@
-.map-container {
-        position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-                height: 0;
-                    overflow: hidden;
-                        max-width: 100%;
-                        }
+from django.db import models
 
-                        .map-container iframe {
-                            position: absolute;
-                                top: 0;
-                                    left: 0;
-                                        width: 100%;
-                                            height: 100%;
-                                            }
-                                            
-}
+class MenuItem(models.Model):
+    name = models.CharField(max_length=255)
+        description = models.TextField()
+            price = models.DecimalField(max_digits=5, decimal_places=2)
+                created_at = models.DateTimeField(auto_now_add=True)
+                    updated_at = models.DateTimeField(auto_now=True)
+
+                        def __str__(self):
+                                return f"{self.name} - {self.price}"
