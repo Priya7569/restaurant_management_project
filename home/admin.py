@@ -1,13 +1,9 @@
-{% for menu_item in menu_items %}
-    <div>
-            <h2>{{ menu_item.name }}</h2>
-                    <p>{{ menu_item.description }}</p>
-                            <p>Price: {{ menu_item.price }}</p>
-                                    {% if menu_item.image %}
-                                                <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
-                                                        {% else %}
-                                                                    <p>No image available.</p>
-                                                                            {% endif %}
-                                                                                </div>
-                                                                                {% endfor %}
-                                                                                
+    from django.db import models
+
+    class ContactSubmission(models.Model):
+        name = models.CharField(max_length=255)
+            email = models.EmailField()
+                submitted_at = models.DateTimeField(auto_now_add=True)
+
+                    def __str__(self):
+                            return f"{self.name} - {self.email}"
