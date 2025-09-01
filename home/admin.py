@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from .models import RestaurantLocation
+from django.db import models
 
-def home(request):
-    try:
-            restaurant_location = RestaurantLocation.objects.first()
-                except RestaurantLocation.DoesNotExist:
-                        restaurant_location = None
+class MenuItem(models.Model):
+    name = models.CharField(max_length=255)
+        description = models.TextField()
+            price = models.DecimalField(max_digits=5, decimal_places=2)
+                image = models.ImageField(upload_to='menu_images/', blank=True, null=True)
 
-                            return render(request, 'home.html', {'restaurant_location': restaurant_location})
+                    def __str__(self):
+                            return self.name
