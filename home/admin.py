@@ -1,9 +1,10 @@
-    from django.db import models
+from django.shortcuts import render
+from .models import MenuItem
 
-    class ContactSubmission(models.Model):
-        name = models.CharField(max_length=255)
-            email = models.EmailField()
-                submitted_at = models.DateTimeField(auto_now_add=True)
-
-                    def __str__(self):
-                            return f"{self.name} - {self.email}"
+def home(request):
+    query = request.GET.get('q')
+        if query:
+                menu_items = MenuItem.objects.filter(name__icontains=query)
+                    else:
+                            menu_items = MenuItem.objects.all()
+                                return render(request, 'home.html', {'menu_items': menu_items, 'query': query})
