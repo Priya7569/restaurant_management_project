@@ -1,10 +1,12 @@
 from django.db import models
 
-class MenuItem(models.Model):
+class Restaurant(models.Model):
     name = models.CharField(max_length=255)
-        description = models.TextField()
-            price = models.DecimalField(max_digits=5, decimal_places=2)
-                image = models.ImageField(upload_to='menu_images/', blank=True, null=True)
+        address = models.CharField(max_length=255)
+            city = models.CharField(max_length=100)
+                state = models.CharField(max_length=50)
+                    zip_code = models.CharField(max_length=10)
+                        opening_hours = models.JSONField(default=dict)
 
-                    def __str__(self):
-                            return self.name
+                            def __str__(self):
+                                    return self.name
