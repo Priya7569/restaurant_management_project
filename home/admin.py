@@ -1,8 +1,7 @@
-# views.py
-from django.shortcuts import render
-from .models import Cart
+# models.py
+from django.db import models
 
-def homepage(request):
-    cart_items = Cart.objects.filter(user=request.user)
-        total_items = sum(item.quantity for item in cart_items)
-            return render(request, 'homepage.html', {'total_items': total_items})
+class Restaurant(models.Model):
+    name = models.CharField(max_length=255)
+        logo = models.ImageField(upload_to='restaurant_logos', blank=True, null=True)
+            # Add other fields as needed
