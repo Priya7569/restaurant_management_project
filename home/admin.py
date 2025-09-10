@@ -1,6 +1,4 @@
-from django.db import models
-
-class Restaurant(models.Model):
-    name = models.CharField(max_length=255)
-        phone_number = models.CharField(max_length=20)
-            # other fields...
+<div class="datetime-info">
+    <p>Current Date and Time: {% now "jS F Y H:i:s" %}</p>
+    </div>
+    
